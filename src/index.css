@@ -132,5 +132,13 @@ header, footer {
 }
 
 main {
-    @apply flex-[1_0_auto];
+    @apply flex-[1_0_auto] bg-[hsl(206_54%_97%)] pb-[100px];
+}
+
+#root, body, html {
+    @apply overflow-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:w-0 [&::-webkit-scrollbar]:h-0;
+}
+
+header {
+    background: linear-gradient(90deg, hsl(197, 100%, 94%), hsl(202, 84%, 81%), hsl(206, 83%, 68%));
 }
