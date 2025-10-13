@@ -8,11 +8,9 @@ import Layout from "@/pages/Layout.tsx";
 import Profile from "@/pages/Profile.tsx";
 import Main from "@/pages/Main.tsx";
 import Setting from "@/pages/Setting.tsx";
+import { isTMA } from '@telegram-apps/bridge';
 import ConfigItemPage from "@/pages/ConfigItemPage.tsx";
-
-init()
-
-backButton.mount()
+import Privacy from "@/pages/Privacy.tsx";
 
 const router = createBrowserRouter([
     {
@@ -41,12 +39,21 @@ const router = createBrowserRouter([
                 ]
             },
             {
+                path: "/privacy",
+                element: <Privacy />
+            },
+            {
                 path: "*",
                 element: <div>Такйо страницы более нет!</div>
             }
         ]
     }
 ]);
+
+if (isTMA() && window.location.pathname !== "/privacy") {
+    init()
+    backButton.mount()
+}
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
