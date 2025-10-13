@@ -53,19 +53,15 @@ function Layout() {
             } else {
                 backButton.hide()
             }
-
-            return () => {
-                backButton.unmount()
-            }
         }, [location, navigate]);
     }
 
     let content = null;
 
-    if (isTMA() && location.pathname !== "/privacy") {
+    if (isTMA()) {
         content = (
             <>
-                <header className={"bg-green-700 px-3 py-2"}>
+                <header className={"px-3 py-2"}>
                     <div className={"flex items-center justify-end"}>
                         <div className={"flex items-center gap-2"}>
                             <h1 className={"text-black font-bold text-lg"}>Просто vpn</h1>
@@ -96,7 +92,7 @@ function Layout() {
                 </footer>
             </>
         )
-    } if (location.pathname === "/privacy") {
+    } else if (location.pathname === "/privacy") {
         content = (
             <>
                 <main className={"px-3 py-2"}>

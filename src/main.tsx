@@ -12,6 +12,11 @@ import { isTMA } from '@telegram-apps/bridge';
 import ConfigItemPage from "@/pages/ConfigItemPage.tsx";
 import Privacy from "@/pages/Privacy.tsx";
 
+if (isTMA()) {
+    init()
+    backButton.mount()
+}
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -44,16 +49,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "*",
-                element: <div>Такйо страницы более нет!</div>
+                element: <div>Такой страницы более нет!</div>
             }
         ]
     }
 ]);
-
-if (isTMA() && window.location.pathname !== "/privacy") {
-    init()
-    backButton.mount()
-}
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
