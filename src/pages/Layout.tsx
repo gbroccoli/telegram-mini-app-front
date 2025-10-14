@@ -1,6 +1,6 @@
 import {useLaunchParams, backButton} from '@telegram-apps/sdk-react';
 import '@/App.css'
-import {CircleUser, Settings, Star, Home, type LucideIcon} from "lucide-react";
+import {CircleUser, Settings, Home, type LucideIcon, History} from "lucide-react";
 import {Link, Outlet, useLocation, useNavigate} from "react-router";
 import {useEffect} from "react";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar.tsx";
@@ -19,9 +19,9 @@ const MenuObj: MenuObjItem[] = [
         icon: Home,
     },
     {
-        path: "/ohenca",
-        name: "Оценка",
-        icon: Star
+        path: "/history",
+        name: "История",
+        icon: History
     },
     {
         path: "/setting",
@@ -48,7 +48,7 @@ function Layout() {
             if (location.pathname !== "/") {
                 backButton.show()
                 backButton.onClick(() => {
-                    navigate(-1)
+                    navigate(1)
                 })
             } else {
                 backButton.hide()

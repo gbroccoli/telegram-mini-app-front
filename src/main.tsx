@@ -11,6 +11,8 @@ import Setting from "@/pages/Setting.tsx";
 import { isTMA } from '@telegram-apps/bridge';
 import ConfigItemPage from "@/pages/ConfigItemPage.tsx";
 import Privacy from "@/pages/Privacy.tsx";
+import HistoryPage from "@/pages/HistoryPage";
+import HistoryItemPage from "@/pages/HistoryItemPage";
 
 if (isTMA()) {
     init()
@@ -29,6 +31,16 @@ const router = createBrowserRouter([
             {
                 path: "profile",
                 element: <Profile/>
+            },
+            {
+                path: "history",
+                element: <HistoryPage />,
+                children: [
+                    {
+                        path: "item/:id",
+                        element: <HistoryItemPage />
+                    }
+                ]
             },
             {
                 path: "setting",
