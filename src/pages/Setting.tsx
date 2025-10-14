@@ -2,7 +2,6 @@ import {Card} from "@/components/ui/card.tsx";
 import {Zap} from "lucide-react";
 import {Label} from "@/components/ui/label.tsx";
 import {Switch} from "@/components/ui/switch.tsx";
-import {requestWriteAccess} from "@telegram-apps/sdk-react";
 
 const Setting = () => {
 
