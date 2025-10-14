@@ -2,8 +2,26 @@ import {Card} from "@/components/ui/card.tsx";
 import {Zap} from "lucide-react";
 import {Label} from "@/components/ui/label.tsx";
 import {Switch} from "@/components/ui/switch.tsx";
+import {requestWriteAccess} from "@telegram-apps/sdk-react";
 
 const Setting = () => {
+
+    const writeSendMessage = () => {
+        // if (requestWriteAccess.isAvailable()) {
+        //     const statusRes = async () => {
+        //         const status = await requestWriteAccess()
+        //         if (status === "allowed") {
+        //             alert("Отлично")
+        //         } else {
+        //             alert("Плохо")
+        //         }
+        //     }
+        //
+        //     statusRes().then(() => {})
+        // }
+        alert("Что-то будет!")
+    }
+
     return (
         <>
             <div className={"space-y-6"}>
@@ -20,7 +38,7 @@ const Setting = () => {
                                 </Label>
                                 <p className="text-xs text-muted-foreground mt-1">Получать уведомления о событиях</p>
                             </div>
-                            <Switch id={"notifications"} />
+                            <Switch id={"notifications"} onCheckedChange={writeSendMessage} />
                         </div>
                         <div className={"flex items-center justify-between py-3"}>
                             <div className={"flex-1"}>
