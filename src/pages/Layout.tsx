@@ -126,7 +126,7 @@ function Layout() {
     if (isTMA()) {
         content = (
             <>
-                <header className={`px-3 ${fullScreen ? "pt-18 pb-4" : "py-2"}`}>
+                <header className={`px-3 ${fullScreen ? `pt-[10vh] pb-4` : "py-2"}`}>
                     <div className={"flex items-center justify-end"}>
                         <div className={"flex items-center gap-2"}>
                             <h1 className={"text-black font-bold text-lg"}>Просто vpn</h1>
