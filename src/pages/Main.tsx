@@ -11,7 +11,7 @@ const Main = () => {
             <Card className={"p-5 border-0 shadow-md"}>
                 <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[hsl(197_100%_94%)] to-[hsl(206_83%_68%)] flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[hsl(197_100%_94%)] to-[hsl(206_83%_68%)] dark:from-[hsl(212_64%_40%)] dark:t0-[hsl(200_100%_40%)] flex items-center justify-center">
                             <Coins className="w-6 h-6 text-white" />
                         </div>
                         <div>
