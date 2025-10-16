@@ -8,7 +8,7 @@ import {Badge} from "@/components/ui/badge.tsx";
 const Main = () => {
     return (
         <>
-            <Card className={"p-5 border-0 shadow-md bg-[#f4f6ff]"}>
+            <Card className={"p-5 border-0 shadow-md"}>
                 <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-3">
                         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[hsl(197_100%_94%)] to-[hsl(206_83%_68%)] flex items-center justify-center">
@@ -21,7 +21,7 @@ const Main = () => {
                     </div>
                 </div>
 
-                <div className="flex items-center gap-2 text-xs text-muted-foreground bg-white/60 rounded-lg p-3">
+                <div className="flex items-center gap-2 text-xs text-muted-foreground dark:text-white bg-white/60 dark:bg-neutral-600 rounded-lg p-3">
                     <Calendar className="w-4 h-4" />
                     <span>Следующее списание: 1 февраля 2025</span>
                 </div>

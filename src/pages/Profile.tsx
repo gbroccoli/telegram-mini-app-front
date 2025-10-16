@@ -24,7 +24,7 @@ const Profile = () => {
     return (
         <>
             <div className={"space-y-3"}>
-                <Card className={"p-5 border-0 bg-linear-[180deg,hsl(197_100%_94%),hsl(202_84%__81%),hsl(206_83%_68%)]"}>
+                <Card className={"p-5 border-0 bg-linear-[180deg,hsl(197_100%_94%),hsl(202_84%__81%),hsl(206_83%_68%)] dark:bg-linear-[180deg,hsl(202_61%_26%),hsl(212_64%_40%),hsl(200_100%_40%)]"}>
                     <div className={"flex items-center gap-2"}>
                         <Avatar className={"w-15 h-15"}>
                             <AvatarImage src={tg?.tgWebAppData?.user?.photo_url} />

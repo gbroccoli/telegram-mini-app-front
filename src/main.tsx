@@ -13,59 +13,71 @@ import ConfigItemPage from "@/pages/ConfigItemPage.tsx";
 import Privacy from "@/pages/Privacy.tsx";
 import HistoryPage from "@/pages/HistoryPage";
 import HistoryItemPage from "@/pages/HistoryItemPage";
+import NoTWA from "@/pages/Errors/NoTWA.tsx";
 
 if (isTMA()) {
     init()
     backButton.mount()
 }
 
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Layout/>,
-        children: [
-            {
-                index: true,
-                element: <Main/>
-            },
-            {
-                path: "profile",
-                element: <Profile/>
-            },
-            {
-                path: "history",
-                element: <HistoryPage />,
-                children: [
-                    {
-                        path: "item/:id",
-                        element: <HistoryItemPage />
-                    }
-                ]
-            },
-            {
-                path: "setting",
-                element: <Setting/>
-            },
-            {
-                path: "config",
-                children: [
-                    {
-                        path: ":id",
-                        element: <ConfigItemPage />
-                    }
-                ]
-            },
-            {
-                path: "/privacy",
-                element: <Privacy />
-            },
-            {
-                path: "*",
-                element: <div>Такой страницы более нет!</div>
-            }
-        ]
-    }
-]);
+let router;
+
+if (isTMA()) {
+    router = createBrowserRouter([
+        {
+            path: "/",
+            element: <Layout/>,
+            children: [
+                {
+                    index: true,
+                    element: <Main/>
+                },
+                {
+                    path: "profile",
+                    element: <Profile/>
+                },
+                {
+                    path: "history",
+                    element: <HistoryPage />,
+                    children: [
+                        {
+                            path: "item/:id",
+                            element: <HistoryItemPage />
+                        }
+                    ]
+                },
+                {
+                    path: "setting",
+                    element: <Setting/>
+                },
+                {
+                    path: "config",
+                    children: [
+                        {
+                            path: ":id",
+                            element: <ConfigItemPage />
+                        }
+                    ]
+                },
+                {
+                    path: "/privacy",
+                    element: <Privacy />
+                },
+                {
+                    path: "*",
+                    element: <div>Такой страницы более нет!</div>
+                }
+            ]
+        }
+    ]);
+} else {
+    router = createBrowserRouter([
+        {
+            path: "/",
+            element: <NoTWA />
+        }
+    ])
+}
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>

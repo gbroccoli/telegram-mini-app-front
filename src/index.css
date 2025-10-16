@@ -138,7 +138,7 @@ header, footer {
 }
 
 main {
-    @apply flex-[1_0_auto] bg-[hsl(206_54%_97%)] pb-[100px];
+    @apply flex-[1_0_auto] bg-[hsl(206_54%_97%)] pb-[100px] dark:bg-transparent;
 }
 
 #root, body, html {
@@ -147,4 +147,10 @@ main {
 
 header {
     background: linear-gradient(90deg, hsl(197, 100%, 94%), hsl(202, 84%, 81%), hsl(206, 83%, 68%));
+}
+
+html.dark {
+    header, footer {
+        background: linear-gradient(90deg, hsl(202, 61%, 26%), hsl(212, 64%, 40%), hsl(200, 100%, 40%));
+    }
 }
